@@ -1,0 +1,35 @@
+
+<p>
+Нужно отобрать записи с датой больше или равно 02.02.18
+</p>
+<div class="structaggregation"><div class="filter"><h4>Filtered by test.датавремя *~ 2018-02-02</h4><div class="resetfilter"><span class="curid"><a href="/doku.php?id=test" class="wikilink1" title="test">Show all (remove filter/sort)</a></span></div></div><div class="table"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th  ><a href="/doku.php?id=test&amp;srt=%25pageid%25&amp;flt%5Btest.%D0%B4%D0%B0%D1%82%D0%B0%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%2A~%5D=2018-02-02" class="" title="Sort by this column">код</a></th><th  data-field="test.датавремя"><a href="/doku.php?id=test&amp;srt=test.%D0%B4%D0%B0%D1%82%D0%B0%D0%B2%D1%80%D0%B5%D0%BC%D1%8F&amp;flt%5Btest.%D0%B4%D0%B0%D1%82%D0%B0%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%2A~%5D=2018-02-02" class="" title="Sort by this column">датавремя</a></th><th  ><a href="/doku.php?id=test&amp;srt=%25lastupdate%25&amp;flt%5Btest.%D0%B4%D0%B0%D1%82%D0%B0%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%2A~%5D=2018-02-02" class="" title="Sort by this column">изменение</a></th><th  data-field="%lasteditor%"><a href="/doku.php?id=test&amp;srt=%25lasteditor%25&amp;flt%5Btest.%D0%B4%D0%B0%D1%82%D0%B0%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%2A~%5D=2018-02-02" class="" title="Sort by this column">автор</a></th>
+	</tr>
+<tr class="dataflt"><th><form method="get" action="/doku.php?id=test" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="id" value="test" /><input type="hidden" name="flt[test.датавремя*~]" value="2018-02-02" /><label><span></span> <input type="text" name="flt[%pageid%*~]" /></label>
+</div></form>
+</th><th><form method="get" action="/doku.php?id=test" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="id" value="test" /><label><span></span> <input type="text" name="flt[test.датавремя*~]" value="2018-02-02" /></label>
+</div></form>
+</th><th><form method="get" action="/doku.php?id=test" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="id" value="test" /><input type="hidden" name="flt[test.датавремя*~]" value="2018-02-02" /><label><span></span> <input type="text" name="flt[%lastupdate%*~]" /></label>
+</div></form>
+</th><th><form method="get" action="/doku.php?id=test" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="id" value="test" /><input type="hidden" name="flt[test.датавремя*~]" value="2018-02-02" /><label><span></span> <input type="text" name="flt[%lasteditor%*~]" /></label>
+</div></form>
+</th></tr>	</thead>
+	<tbody>
+	<tr class="row1" data-pid="test:0000"><td class="col0"><a href="/doku.php?id=test:0000" class="wikilink1" title="test:0000">0000</a></td><td class="col1">02.02.2018 15:29</td><td class="col2">2018/02/02 17:29</td><td class="col3">root</td>
+	</tr>
+	<tr class="row2" data-pid="test:0001"><td class="col0"><a href="/doku.php?id=test:0001" class="wikilink1" title="test:0001">0001</a></td><td class="col1">02.02.2018 15:28</td><td class="col2">2018/02/02 17:28</td><td class="col3">root</td>
+	</tr>
+	</tbody>
+	<tfoot>
+	</tfoot>
+</table></div>
+<a href="/doku.php?do=export_struct_csv&amp;id=test&amp;flt%5Btest.%D0%B4%D0%B0%D1%82%D0%B0%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%2A~%5D=2018-02-02&amp;hash=07993d32f79fdd006e8181058d4ade7e" class="export mediafile mf_csv">CSV Export</a></div>
+<p>
+SELECT date(col1), * from data_test where date(col1)&gt;=&#039;2018-02-02&#039;
+</p>

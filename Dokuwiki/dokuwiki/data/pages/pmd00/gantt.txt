@@ -1,0 +1,7 @@
+====== Диаграмма Гантта : Доработка функционала pmd ======
+
+---- struct gantt ----
+schema: pmd00
+cols: %pageid%, %title%, *
+skipweekends: 1
+----

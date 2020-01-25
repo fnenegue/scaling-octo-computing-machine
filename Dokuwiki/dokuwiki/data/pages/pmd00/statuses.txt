@@ -1,0 +1,3 @@
+---- struct lookup ----
+schema: statuses
+----

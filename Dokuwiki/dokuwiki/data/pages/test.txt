@@ -1,0 +1,11 @@
+Нужно отобрать записи с датой больше или равно 02.02.18
+
+---- struct table ----
+schema: test
+cols: %pageid%, датавремя, %lastupdate%, %lasteditor% 
+head: код, датавремя,  изменение, автор
+filter : датавремя >= 2018-02-02
+dynfilters: 1
+----
+
+SELECT date(col1), * from data_test where date(col1)>='2018-02-02'

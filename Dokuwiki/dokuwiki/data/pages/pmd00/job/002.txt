@@ -1,0 +1,70 @@
+====== Изменение формата даты struct_field ======
+
+====== Цели ======
+
+Изменить формат даты-времени для поля struct с типом DateTime
+
+Исходные данные: The DateTime type accepts a date and time in the format YYYY-MM-DD HH:MM:SS
+
+Требуемый формат ввода: DD.MM.YYYY HH:MM
+
+Требования к реализации:
+
+  * Минимальное время для переноса изменений на сервер (формализовать критерий)
+  * Защита от несанкционированных изменений автоматическим обновлением плагина
+    * ? Создать модифицированный плагин, возможно несовместимый с исходным
+
+
+====== Планирование ======
+
+^Дата с ^ Дата по ^План ^Описание ^
+|2018-01-30 | | |Начальный план|
+<pagemod add_plans output_before>|@@Дата с@@ |@@Дата по@@ |@@План@@ |@@Описание@@ |
+</pagemod>
+
+
+<form>
+action pagemod _self add_plans
+date "Дата с"
+date "Дата по"
+number "План"
+textbox "Описание"
+submit "Добавить плановые показатели"
+</form>
+
+====== Выполнение ======
+
+<WRAP center round info 60%>
+**[[.002:doc|Документация по задаче 002]]**
+
+**[[.002:dev|Разработка по задаче 002]]**
+
+</WRAP>
+
+====== Трудозатраты по задаче ======
+
+---- struct table ----
+schema: pmd00work
+cols: %pageid%, исполнит, видработ, начдата, окондата, час, описработ, %lastupdate%, %lasteditor% 
+head: код, исполнитель, вид работы, начало дата, окончание дата, час, описание работ,  изменение, автор
+filterand:  %pageid% *~ 002-
+sort: начдата
+dynfilters: 1
+summarize: 1
+----
+
+<form>
+Action template .:002:worktemplate ..:work:"002-@@код операции@@"
+hiddenautoinc "код операции" 0000
+struct_field "pmd00work.исполнит"
+struct_field "pmd00work.видработ"
+struct_field "pmd00work.начдата"
+struct_field "pmd00work.окондата"
+struct_field "pmd00work.час"
+struct_field "pmd00work.описработ"
+submit "Записать"
+
+</form>
+
+[[.:002:worktemplate|Шаблон описания работ 002]]
+

@@ -1,0 +1,9 @@
+---- struct table ----
+schema: test
+cols: %pageid%, datetim, %lastupdate%, %lasteditor% 
+head: код, датавремя,  изменение, автор
+filter : date(datetim)>='2018-02-01'
+dynfilters: 1
+----
+
+SELECT date(col5), * from data_test where date(col5)>='2018-02-01'

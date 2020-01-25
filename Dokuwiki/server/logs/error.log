@@ -1,0 +1,89 @@
+[Tue Mar 06 16:46:23.598634 2018] [mpm_winnt:notice] [pid 2788:tid 680] AH00455: Apache/2.4.25 (Win32) PHP/5.6.30 configured -- resuming normal operations
+[Tue Mar 06 16:46:23.598634 2018] [mpm_winnt:notice] [pid 2788:tid 680] AH00456: Apache Lounge VC11 Server built: Dec 20 2016 13:02:04
+[Tue Mar 06 16:46:23.599634 2018] [core:notice] [pid 2788:tid 680] AH00094: Command line: 'mapache.exe -d C:/eugenenf/07/dokuwiki/server'
+[Tue Mar 06 16:46:23.758739 2018] [mpm_winnt:notice] [pid 2788:tid 680] AH00418: Parent: Created child process 18224
+[Tue Mar 06 16:46:25.163584 2018] [mpm_winnt:notice] [pid 18224:tid 672] AH00354: Child: Starting 64 worker threads.
+[Tue Mar 06 16:47:40.276209 2018] [access_compat:error] [pid 18224:tid 1188] [client ::1:56587] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Tue Mar 06 16:48:17.883504 2018] [access_compat:error] [pid 18224:tid 1188] [client ::1:56594] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Tue Mar 06 16:48:17.909520 2018] [access_compat:error] [pid 18224:tid 1188] [client ::1:56594] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Tue Mar 06 18:24:12.412818 2018] [access_compat:error] [pid 18224:tid 1188] [client ::1:57704] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Tue Mar 06 18:24:12.497875 2018] [access_compat:error] [pid 18224:tid 1188] [client ::1:57704] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Tue Mar 06 18:29:00.419048 2018] [access_compat:error] [pid 18224:tid 1184] [client ::1:58131] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Tue Mar 06 18:29:00.517113 2018] [access_compat:error] [pid 18224:tid 1184] [client ::1:58131] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Tue Mar 06 18:29:23.553432 2018] [access_compat:error] [pid 18224:tid 1188] [client ::1:58171] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Tue Mar 06 18:44:09.869455 2018] [access_compat:error] [pid 18224:tid 1184] [client ::1:59482] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Thu Mar 22 12:26:29.487117 2018] [core:warn] [pid 9956:tid 644] AH00098: pid file c:/eugenenf/07/dokuwiki/server/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Mar 22 12:26:30.643162 2018] [mpm_winnt:notice] [pid 9956:tid 644] AH00455: Apache/2.4.25 (Win32) PHP/5.6.30 configured -- resuming normal operations
+[Thu Mar 22 12:26:30.645163 2018] [mpm_winnt:notice] [pid 9956:tid 644] AH00456: Apache Lounge VC11 Server built: Dec 20 2016 13:02:04
+[Thu Mar 22 12:26:30.645163 2018] [core:notice] [pid 9956:tid 644] AH00094: Command line: 'mapache.exe -d C:/eugenenf/07/dokuwiki/server'
+[Thu Mar 22 12:26:30.715336 2018] [mpm_winnt:notice] [pid 9956:tid 644] AH00418: Parent: Created child process 12356
+[Thu Mar 22 12:26:31.422195 2018] [mpm_winnt:notice] [pid 12356:tid 676] AH00354: Child: Starting 64 worker threads.
+[Thu Mar 22 12:44:20.489494 2018] [mpm_winnt:crit] [pid 12356:tid 676] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Thu Mar 22 12:44:20.489494 2018] [mpm_winnt:warn] [pid 12356:tid 1460] (OS 995)ќпераци€ ввода/вывода была прервана из-за завершени€ потока команд или по запросу приложени€.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Thu Mar 22 12:44:20.489494 2018] [mpm_winnt:warn] [pid 12356:tid 652] (OS 995)ќпераци€ ввода/вывода была прервана из-за завершени€ потока команд или по запросу приложени€.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Wed Jun 20 17:49:35.946866 2018] [core:warn] [pid 10000:tid 224] AH00098: pid file c:/eugenenf/07/dokuwiki/server/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Jun 20 17:49:37.736762 2018] [mpm_winnt:notice] [pid 10000:tid 224] AH00455: Apache/2.4.25 (Win32) PHP/5.6.30 configured -- resuming normal operations
+[Wed Jun 20 17:49:37.736762 2018] [mpm_winnt:notice] [pid 10000:tid 224] AH00456: Apache Lounge VC11 Server built: Dec 20 2016 13:02:04
+[Wed Jun 20 17:49:37.736762 2018] [core:notice] [pid 10000:tid 224] AH00094: Command line: 'mapache.exe -d C:/eugenenf/07/dokuwiki/server'
+[Wed Jun 20 17:49:37.779735 2018] [mpm_winnt:notice] [pid 10000:tid 224] AH00418: Parent: Created child process 6416
+[Wed Jun 20 17:49:39.202856 2018] [mpm_winnt:notice] [pid 6416:tid 680] AH00354: Child: Starting 64 worker threads.
+[Wed Jun 20 18:37:57.366774 2018] [access_compat:error] [pid 6416:tid 1196] [client ::1:50928] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Wed Jun 20 22:14:45.334681 2018] [access_compat:error] [pid 6416:tid 1196] [client ::1:52465] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Thu Jun 21 00:31:16.091099 2018] [:error] [pid 6416:tid 1188] [client ::1:53513] script 'C:/eugenenf/07/dokuwiki/dokuwiki/lib/plugins/sqlite/connection.php.php' not found or unable to stat
+[Thu Jun 21 00:33:46.628591 2018] [access_compat:error] [pid 6416:tid 1172] [client ::1:53520] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Thu Jun 21 23:57:08.640954 2018] [core:warn] [pid 8636:tid 620] AH00098: pid file c:/eugenenf/07/dokuwiki/server/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Jun 21 23:57:10.252321 2018] [mpm_winnt:notice] [pid 8636:tid 620] AH00455: Apache/2.4.25 (Win32) PHP/5.6.30 configured -- resuming normal operations
+[Thu Jun 21 23:57:10.252321 2018] [mpm_winnt:notice] [pid 8636:tid 620] AH00456: Apache Lounge VC11 Server built: Dec 20 2016 13:02:04
+[Thu Jun 21 23:57:10.252321 2018] [core:notice] [pid 8636:tid 620] AH00094: Command line: 'mapache.exe -d C:/eugenenf/07/dokuwiki/server'
+[Thu Jun 21 23:57:10.257320 2018] [mpm_winnt:notice] [pid 8636:tid 620] AH00418: Parent: Created child process 10948
+[Thu Jun 21 23:57:11.783807 2018] [mpm_winnt:notice] [pid 10948:tid 676] AH00354: Child: Starting 64 worker threads.
+[Fri Jun 22 00:21:09.426206 2018] [access_compat:error] [pid 10948:tid 1168] [client ::1:58628] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:pm&do=admin
+[Sat Jun 30 18:31:10.546251 2018] [core:warn] [pid 7048:tid 540] AH00098: pid file c:/eugenenf/07/dokuwiki/server/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sat Jun 30 18:31:22.642650 2018] [mpm_winnt:notice] [pid 7048:tid 540] AH00455: Apache/2.4.25 (Win32) PHP/5.6.30 configured -- resuming normal operations
+[Sat Jun 30 18:31:22.642650 2018] [mpm_winnt:notice] [pid 7048:tid 540] AH00456: Apache Lounge VC11 Server built: Dec 20 2016 13:02:04
+[Sat Jun 30 18:31:22.642650 2018] [core:notice] [pid 7048:tid 540] AH00094: Command line: 'mapache.exe -d C:/eugenenf/07/dokuwiki/server'
+[Sat Jun 30 18:31:22.647649 2018] [mpm_winnt:notice] [pid 7048:tid 540] AH00418: Parent: Created child process 9532
+[Sat Jun 30 18:31:23.979156 2018] [mpm_winnt:notice] [pid 9532:tid 680] AH00354: Child: Starting 64 worker threads.
+[Sat Jun 30 18:38:33.515901 2018] [access_compat:error] [pid 9532:tid 1184] [client ::1:55873] AH01797: client denied by server configuration: C:/eugenenf/07/dokuwiki/dokuwiki/data/security.png, referer: http://localhost:8800/doku.php?id=pmd00:job:001&do=admin
+[Sat Jun 30 19:15:01.508790 2018] [core:warn] [pid 2552:tid 640] AH00098: pid file c:/eugenenf/07/dokuwiki/server/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sat Jun 30 19:15:01.691677 2018] [mpm_winnt:notice] [pid 2552:tid 640] AH00455: Apache/2.4.25 (Win32) PHP/5.6.30 configured -- resuming normal operations
+[Sat Jun 30 19:15:01.691677 2018] [mpm_winnt:notice] [pid 2552:tid 640] AH00456: Apache Lounge VC11 Server built: Dec 20 2016 13:02:04
+[Sat Jun 30 19:15:01.691677 2018] [core:notice] [pid 2552:tid 640] AH00094: Command line: 'mapache.exe -d C:/eugenenf/07/dokuwiki/server'
+[Sat Jun 30 19:15:01.702670 2018] [mpm_winnt:notice] [pid 2552:tid 640] AH00418: Parent: Created child process 10940
+[Sat Jun 30 19:15:02.659738 2018] [mpm_winnt:notice] [pid 10940:tid 712] AH00354: Child: Starting 64 worker threads.
+[Sat Jun 30 20:21:12.095252 2018] [core:warn] [pid 8340:tid 584] AH00098: pid file c:/eugenenf/07/dokuwiki/server/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  PHP Startup: Unable to load dynamic library './php/ext\\php_sqlite.dll' - \xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd.\r\n in Unknown on line 0
+[Sat Jun 30 20:21:12.898852 2018] [mpm_winnt:notice] [pid 8340:tid 584] AH00455: Apache/2.4.25 (Win32) PHP/5.6.30 configured -- resuming normal operations
+[Sat Jun 30 20:21:12.898852 2018] [mpm_winnt:notice] [pid 8340:tid 584] AH00456: Apache Lounge VC11 Server built: Dec 20 2016 13:02:04
+[Sat Jun 30 20:21:12.898852 2018] [core:notice] [pid 8340:tid 584] AH00094: Command line: 'mapache.exe -d C:/eugenenf/07/dokuwiki/server'
+[Sat Jun 30 20:21:12.932517 2018] [mpm_winnt:notice] [pid 8340:tid 584] AH00418: Parent: Created child process 11148
+PHP Warning:  PHP Startup: Unable to load dynamic library './php/ext\\php_sqlite.dll' - \xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd.\r\n in Unknown on line 0
+[Sat Jun 30 20:21:13.955165 2018] [mpm_winnt:notice] [pid 11148:tid 776] AH00354: Child: Starting 64 worker threads.
+[Sat Jun 30 20:22:02.562014 2018] [core:warn] [pid 11604:tid 608] AH00098: pid file c:/eugenenf/07/dokuwiki/server/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  PHP Startup: Unable to load dynamic library './php/ext\\php_sqlite2.dll' - \xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd.\r\n in Unknown on line 0
+[Sat Jun 30 20:22:02.624309 2018] [mpm_winnt:notice] [pid 11604:tid 608] AH00455: Apache/2.4.25 (Win32) PHP/5.6.30 configured -- resuming normal operations
+[Sat Jun 30 20:22:02.625309 2018] [mpm_winnt:notice] [pid 11604:tid 608] AH00456: Apache Lounge VC11 Server built: Dec 20 2016 13:02:04
+[Sat Jun 30 20:22:02.625309 2018] [core:notice] [pid 11604:tid 608] AH00094: Command line: 'mapache.exe -d C:/eugenenf/07/dokuwiki/server'
+[Sat Jun 30 20:22:02.629303 2018] [mpm_winnt:notice] [pid 11604:tid 608] AH00418: Parent: Created child process 5840
+PHP Warning:  PHP Startup: Unable to load dynamic library './php/ext\\php_sqlite2.dll' - \xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd.\r\n in Unknown on line 0
+[Sat Jun 30 20:22:03.637506 2018] [mpm_winnt:notice] [pid 5840:tid 608] AH00354: Child: Starting 64 worker threads.
+[Sat Jun 30 20:33:44.142222 2018] [core:warn] [pid 6756:tid 612] AH00098: pid file c:/eugenenf/07/dokuwiki/server/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  PHP Startup: Unable to load dynamic library './php/ext\\php_sqlite3.dll' - \xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd.\r\n in Unknown on line 0
+[Sat Jun 30 20:33:44.210177 2018] [mpm_winnt:notice] [pid 6756:tid 612] AH00455: Apache/2.4.25 (Win32) PHP/5.6.30 configured -- resuming normal operations
+[Sat Jun 30 20:33:44.210177 2018] [mpm_winnt:notice] [pid 6756:tid 612] AH00456: Apache Lounge VC11 Server built: Dec 20 2016 13:02:04
+[Sat Jun 30 20:33:44.210177 2018] [core:notice] [pid 6756:tid 612] AH00094: Command line: 'mapache.exe -d C:/eugenenf/07/dokuwiki/server'
+[Sat Jun 30 20:33:44.213172 2018] [mpm_winnt:notice] [pid 6756:tid 612] AH00418: Parent: Created child process 12088
+PHP Warning:  PHP Startup: Unable to load dynamic library './php/ext\\php_sqlite3.dll' - \xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd.\r\n in Unknown on line 0
+[Sat Jun 30 20:33:45.224010 2018] [mpm_winnt:notice] [pid 12088:tid 236] AH00354: Child: Starting 64 worker threads.
+[Sat Jun 30 20:47:01.695498 2018] [core:warn] [pid 7804:tid 592] AH00098: pid file c:/eugenenf/07/dokuwiki/server/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sat Jun 30 20:47:01.739471 2018] [mpm_winnt:notice] [pid 7804:tid 592] AH00455: Apache/2.4.25 (Win32) PHP/5.6.30 configured -- resuming normal operations
+[Sat Jun 30 20:47:01.739471 2018] [mpm_winnt:notice] [pid 7804:tid 592] AH00456: Apache Lounge VC11 Server built: Dec 20 2016 13:02:04
+[Sat Jun 30 20:47:01.739471 2018] [core:notice] [pid 7804:tid 592] AH00094: Command line: 'mapache.exe -d C:/eugenenf/07/dokuwiki/server'
+[Sat Jun 30 20:47:01.743470 2018] [mpm_winnt:notice] [pid 7804:tid 592] AH00418: Parent: Created child process 7092
+[Sat Jun 30 20:47:02.920351 2018] [mpm_winnt:notice] [pid 7092:tid 596] AH00354: Child: Starting 64 worker threads.
+[Mon Jul 02 18:22:12.517376 2018] [core:warn] [pid 4316:tid 592] AH00098: pid file c:/eugenenf/07/dokuwiki/server/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Jul 02 18:22:14.338515 2018] [mpm_winnt:notice] [pid 4316:tid 592] AH00455: Apache/2.4.25 (Win32) PHP/5.6.30 configured -- resuming normal operations
+[Mon Jul 02 18:22:14.338515 2018] [mpm_winnt:notice] [pid 4316:tid 592] AH00456: Apache Lounge VC11 Server built: Dec 20 2016 13:02:04
+[Mon Jul 02 18:22:14.338515 2018] [core:notice] [pid 4316:tid 592] AH00094: Command line: 'mapache.exe -d C:/eugenenf/07/dokuwiki/server'
+[Mon Jul 02 18:22:14.341514 2018] [mpm_winnt:notice] [pid 4316:tid 592] AH00418: Parent: Created child process 11540
+[Mon Jul 02 18:22:16.405822 2018] [mpm_winnt:notice] [pid 11540:tid 676] AH00354: Child: Starting 64 worker threads.

@@ -1,0 +1,149 @@
+
+<p>
+&lt;?php
+namespace dokuwiki\plugin\struct\types;
+</p>
+
+<p>
+use dokuwiki\plugin\struct\meta\DateFormatConverter;
+use dokuwiki\plugin\struct\meta\QueryBuilder;
+use dokuwiki\plugin\struct\meta\QueryBuilderWhere;
+use dokuwiki\plugin\struct\meta\ValidationException;
+</p>
+
+<p>
+class DateTime extends Date {
+</p>
+<pre class="code">  protected $config = array(
+      &#039;format&#039; =&gt; &#039;&#039;, // filled by constructor
+      &#039;prefilltoday&#039; =&gt; false
+  );</pre>
+<pre class="code">  /**
+   * DateTime constructor.
+   *
+   * @param array|null $config
+   * @param string $label
+   * @param bool $ismulti
+   * @param int $tid
+   */
+  public function __construct($config = null, $label = &#039;&#039;, $ismulti = false, $tid = 0) {
+      global $conf;
+      $this-&gt;config[&#039;format&#039;] = DateFormatConverter::toDate($conf[&#039;dformat&#039;]);</pre>
+<pre class="code">      parent::__construct($config, $label, $ismulti, $tid);
+  }</pre>
+<pre class="code">  /**
+   * Return the editor to edit a single value
+   *
+   * @param string $name     the form name where this has to be stored
+   * @param string $rawvalue the current value
+   * @param string $htmlID
+   *
+   * @return string html
+   */
+  public function valueEditor($name, $rawvalue, $htmlID) {
+      if($this-&gt;config[&#039;prefilltoday&#039;] &amp;&amp; !$rawvalue) {
+          $rawvalue = date(&#039;Y-m-d H:i:s&#039;);
+      }</pre>
+<pre class="code">      $params = array(
+          &#039;name&#039; =&gt; $name,
+          &#039;value&#039; =&gt; $rawvalue,
+          &#039;class&#039; =&gt; &#039;struct_datetime&#039;,
+          &#039;type&#039; =&gt; &#039;datetime-local&#039;, // HTML5 datetime picker
+          &#039;id&#039; =&gt; $htmlID,
+      );
+      $attributes = buildAttributes($params, true);
+      return &quot;&lt;input $attributes /&gt;&quot;;
+  }</pre>
+<pre class="code">  /**
+   * Validate a single value
+   *
+   * This function needs to throw a validation exception when validation fails.
+   * The exception message will be prefixed by the appropriate field on output
+   *
+   * @param string|array $rawvalue
+   * @return string
+   * @throws ValidationException
+   */
+  public function validate($rawvalue) {
+      $rawvalue = trim($rawvalue);
+      list($date, $time) = explode(&#039; &#039;, $rawvalue, 2);
+      $date = trim($date);
+      $time = trim($time);</pre>
+<pre class="code">      list($year, $month, $day) = explode(&#039;-&#039;, $date, 3);
+      if(!checkdate((int) $month, (int) $day, (int) $year)) {
+          throw new ValidationException(&#039;invalid datetime format&#039;);
+      }</pre>
+<pre class="code">      list($h, $m, $s) = explode(&#039;:&#039;, $time, 3);
+      $h = (int) $h;
+      $m = (int) $m;
+      $s = (int) $s;
+      if($h &lt; 0 || $h &gt; 23 || $m &lt; 0 || $m &gt; 59 || $s &lt; 0 || $s &gt; 59) {
+          throw new ValidationException(&#039;invalid datetime format&#039;);
+      }</pre>
+<pre class="code">      return sprintf(&quot;%d-%02d-%02d %02d:%02d:%02d&quot;, $year, $month, $day, $h, $m, $s);
+  }</pre>
+<pre class="code">  /**
+   * @param QueryBuilder $QB
+   * @param string $tablealias
+   * @param string $colname
+   * @param string $alias
+   */
+  public function select(QueryBuilder $QB, $tablealias, $colname, $alias) {
+      $col = &quot;$tablealias.$colname&quot;;</pre>
+<pre class="code">      // when accessing the revision column we need to convert from Unix timestamp
+      if(is_a($this-&gt;context,&#039;dokuwiki\plugin\struct\meta\RevisionColumn&#039;)) {
+          $rightalias = $QB-&gt;generateTableAlias();
+          $QB-&gt;addLeftJoin($tablealias, &#039;titles&#039;, $rightalias, &quot;$tablealias.pid = $rightalias.pid&quot;);
+          $col = &quot;DATETIME($rightalias.lastrev, &#039;unixepoch&#039;, &#039;localtime&#039;)&quot;;
+      }</pre>
+<pre class="code">      $QB-&gt;addSelectStatement($col, $alias);
+  }</pre>
+<pre class="code">  /**
+   * @param QueryBuilderWhere $add
+   * @param string $tablealias
+   * @param string $colname
+   * @param string $comp
+   * @param string|\string[] $value
+   * @param string $op
+   */
+  public function filter(QueryBuilderWhere $add, $tablealias, $colname, $comp, $value, $op) {
+      $col = &quot;$tablealias.$colname&quot;;</pre>
+<pre class="code">      // when accessing the revision column we need to convert from Unix timestamp
+      if(is_a($this-&gt;context,&#039;dokuwiki\plugin\struct\meta\RevisionColumn&#039;)) {
+          $QB = $add-&gt;getQB();
+          $rightalias = $QB-&gt;generateTableAlias();
+          $col = &quot;DATETIME($rightalias.lastrev, &#039;unixepoch&#039;, &#039;localtime&#039;)&quot;;
+          $QB-&gt;addLeftJoin($tablealias, &#039;titles&#039;, $rightalias, &quot;$tablealias.pid = $rightalias.pid&quot;);
+      }</pre>
+<pre class="code">      /** @var QueryBuilderWhere $add Where additionional queries are added to*/
+      if(is_array($value)) {
+          $add = $add-&gt;where($op); // sub where group
+          $op = &#039;OR&#039;;
+      }
+      foreach((array) $value as $item) {
+	    $QB = $add-&gt;getQB();
+          $pl = $QB-&gt;addValue($item);
+          $add-&gt;where($op, &quot;$col $comp $pl&quot;);
+      }
+  }</pre>
+<pre class="code">  /**
+   * When sorting `%lastupdated%`, then sort the data from the `titles` table instead the `data_` table.
+   *
+   * @param QueryBuilder $QB
+   * @param string $tablealias
+   * @param string $colname
+   * @param string $order
+   */
+  public function sort(QueryBuilder $QB, $tablealias, $colname, $order) {
+      $col = &quot;$tablealias.$colname&quot;;</pre>
+<pre class="code">      if(is_a($this-&gt;context,&#039;dokuwiki\plugin\struct\meta\RevisionColumn&#039;)) {
+          $rightalias = $QB-&gt;generateTableAlias();
+          $QB-&gt;addLeftJoin($tablealias, &#039;titles&#039;, $rightalias, &quot;$tablealias.pid = $rightalias.pid&quot;);
+          $col = &quot;$rightalias.lastrev&quot;;
+      }</pre>
+<pre class="code">      $QB-&gt;addOrderBy(&quot;$col $order&quot;);
+  }</pre>
+
+<p>
+}
+</p>

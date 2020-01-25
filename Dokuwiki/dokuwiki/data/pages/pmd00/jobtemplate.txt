@@ -1,0 +1,58 @@
+====== @@наименование задачи|Наименование задачи@@ ======
+
+====== Цели ======
+
+
+====== Планирование ======
+
+^Дата с ^ Дата по ^План ^Описание ^
+|##pmd00.datefr## |##pmd00.dateto## |##pmd00.plan## |Начальный план|
+<pagemod add_plans output_before>|@@Дата с@@ |@@Дата по@@ |@@План@@ |@@Описание@@ |
+</pagemod>
+
+
+<form>
+action pagemod _self add_plans
+date "Дата с"
+date "Дата по"
+number "План"
+textbox "Описание"
+submit "Добавить плановые показатели"
+</form>
+
+====== Выполнение ======
+
+<WRAP center round info 60%>
+**[[.@@номер задачи@@:doc|Документация по задаче @@номер задачи@@]]**
+
+**[[.@@номер задачи@@:dev|Разработка по задаче @@номер задачи@@]]**
+
+</WRAP>
+
+====== Трудозатраты по задаче ======
+
+---- struct table ----
+schema: pmd00work
+cols: %%pageid%%, исполнит, видработ, начдата, окондата, час, описработ, %%lastupdate%%, %%lasteditor%% 
+head: код, исполнитель, вид работы, начало дата, окончание дата, час, описание работ,  изменение, автор
+filterand:  %%pageid%% *~ @@номер задачи@@-
+sort: начдата
+dynfilters: 1
+summarize: 1
+----
+
+<form>
+Action template .:@@номер задачи@@:worktemplate ..:work:"@@номер задачи@@-@@код операции@@"
+hiddenautoinc "код операции" 0000
+struct_field "pmd00work.исполнит"
+struct_field "pmd00work.видработ"
+struct_field "pmd00work.начдата"
+struct_field "pmd00work.окондата"
+struct_field "pmd00work.час"
+struct_field "pmd00work.описработ"
+submit "Записать"
+
+</form>
+
+[[.:@@номер задачи@@:worktemplate|Шаблон описания работ @@номер задачи@@]]
+

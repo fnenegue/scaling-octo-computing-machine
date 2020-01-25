@@ -1,0 +1,16 @@
+<form>
+Action template .jobtemplate .job:
+textbox "номер задачи" @
+textbox "наименование задачи" !
+struct_field "pmd00.status"
+struct_field "pmd00.datefr" !
+struct_field "pmd00.dateto" !
+struct_field "pmd00.plan" !
+struct_field "pmd00.fact" !
+
+addpage .worktemplate: worktemplate
+addpage .doctemplate: doc
+addpage .devtemplate: dev
+
+submit "Создать задачу"
+</form>

@@ -1,0 +1,39 @@
+====== Разработка: @@наименование задачи|Наименование задачи@@ ======
+
+===[[.task|Запросы на изменения и заявки на анализ]]===
+
+
+====== Выполнение ======
+
+---- struct table ----
+schema: pmd00work
+cols: %%pageid%%, исполнит, видработ, начдата, окондата, час, описработ, %%lastupdate%%, %%lasteditor%% 
+head: код, исполнитель, вид работы, начало дата, окончание дата, час, описание работ,  изменение, автор
+filterand:  %%pageid%% *~ @@номер задачи@@dev
+sort: начдата
+dynfilters: 1
+summarize: 1
+----
+
+<form>
+Action template .worktemplate ..:..:work:"@@номер задачи@@dev@@код операции@@"
+hiddenautoinc "код операции" 0000
+struct_field "pmd00work.исполнит"
+struct_field "pmd00work.видработ"
+struct_field "pmd00work.начдата"
+struct_field "pmd00work.окондата"
+struct_field "pmd00work.час"
+struct_field "pmd00work.описработ"
+submit "Записать"
+
+</form>
+
+[[.worktemplate|Шаблон описания работ @@номер задачи@@]]
+
+
+----
+
+[[..:@@номер задачи@@|Задача @@номер задачи@@]]
+
+[[pmd00:pm|Список задач проекта]]
+

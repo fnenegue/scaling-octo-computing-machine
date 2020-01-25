@@ -1,0 +1,88 @@
+====== Управление задачами проекта ======
+
+**Доработка функционала pmd**
+
+**План-график**
+
+**[[.addjob|Добавить задачу]]** **[[.statuses|Список статусов задач]]** **[[.gantt|Диаграмма Гантта]]**
+
+---- struct table ----
+schema: pmd00
+cols: %pageid%, %title%, status,datefr,dateto,plan,fact, %lastupdate%, %lasteditor% 
+head: задача, наименование, статус, дата с,дата по,план,факт,изменение, автор
+dynfilters: 1
+summarize: 1
+----
+
+**[[.addjob|Добавить задачу]]** **[[.statuses|Список статусов задач]]** **[[.gantt|Диаграмма Гантта]]**
+
+====== Оповещение участников проекта ======
+
+===== Руководитель проекта =====
+
+<form>
+
+Textbox "Текст сообщения"
+
+Action mail chuprina_iv@tellur.com.ua@tellur.com.ua
+subject "Сообщение РП"
+
+submit "Отправить руководителю проекта"
+</form>
+
+====== Протоколы совещаний ======
+
+{{pagequery>ns:pmd00:protocol *;display={name} {title};fontsize=110%;sort=name:asc;}}
+
+<form>
+Action template .protocoltemplate .protocol:
+date "дата совещания ГГ-ММ-ДД" @
+submit "Создать протокол"
+</form>
+
+====== Регламенты работы ======
+
+{{pagequery>ns:pmd00:reglament *;display={name} {title};fontsize=110%;sort=name:asc;}}
+
+
+<form>
+Action template .reglamenttemplate .reglament:
+textbox "код регламента" @
+submit "Создать регламент"
+</form>
+
+===== Шаблоны документов =====
+
+  * [[.jobtemplate|Шаблон задачи]]
+  * [[.doctemplate|Шаблон документации по задаче]]
+  * [[.devtemplate|Шаблон разработки по задаче]]
+  * [[.cttemplate|Шаблон СТ]]
+  * [[.worktemplate|Шаблон описания работы]]
+  * [[.protocoltemplate|Шаблон протокола совещания]]
+  * [[.avreporttemplate|Шаблон отчета по командировке]]
+  * [[.reporttemplate|Шаблон отчета о работах]]
+  * [[.reglamenttemplate|Шаблон регламента работы]]
+
+====== Отчеты по командировкам ======
+
+{{pagequery>ns:pmd00:avreport *;display={name} {title};fontsize=110%;sort=name:asc;}}
+
+<form>
+Action template .avreporttemplate .avreport:
+textbox "код отчета ГГ-ММ-ДД" @
+submit "Создать отчет"
+</form>
+
+====== Отчеты о работах ======
+
+{{pagequery>ns:pmd00:report *;display={name} {title};fontsize=110%;sort=name:asc;}}
+
+<form>
+Action template .reporttemplate .report:
+textbox "код отчета ГГГГ-ММ" @
+submit "Создать отчет"
+</form>
+
+===== Список работ по проекту =====
+
+[[.worklist|Список работ по проекту]]

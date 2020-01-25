@@ -1,0 +1,96 @@
+====== консультация по использованию фильтров на поля с типом дата ======
+
+====== Цели ======
+
+Платформа для тестов: https://drive.google.com/open?id=1blrhBgj1qeCcI-caAoshWXNzVZHyzLU6
+
+Получить консультацию, каким образом настраивать фильтрацию по полям с типом дата и датавремя
+
+Описание вопроса:
+
+struct позволяет фильтровать записи из таблиц: https://www.dokuwiki.org/plugin:struct:filters
+
+структура тестовой таблицы:
+
+{{ :pmd00:job:снимок_экрана_2018-02-02_18-15-25.png?nolink&600 |}}
+
+на странице в тестовом примере реализован вызов таблицы:
+
+
+   schema: test
+   cols: %pageid%, датавремя, %lastupdate%, %lasteditor% 
+   head: код, датавремя,  изменение, автор
+   filter : date(датавремя)>='2018-02-02'
+   dynfilters: 1
+
+Фильтрация не происходит
+
+{{ :pmd00:job:снимок_экрана_2018-02-02_18-11-35.png?nolink&400 |}}
+
+При замене на 
+
+   filter : датавремя>='2018-02-02'
+
+   Fatal error: Call to a member function addValue() on a non-object in /media/chuprina_iv/usr/dokuwiki/dokuwiki/lib/plugins/struct/types/DateTime.php on line 132
+   
+После этого нужно через файл открывать страничку и вносить изменение для восстановления работоспособности.
+
+прямой запрос через Управление - Интерфейс SQLite
+
+{{ :pmd00:job:снимок_экрана_2018-02-02_17-50-27.png?nolink&800 |}}
+
+====== Планирование ======
+
+^Дата с ^ Дата по ^План ^Описание ^
+|2018-02-02 | | |Начальный план|
+|2018-02-03 |2018-02-10 |3 |Постановка задачи. Анализ возможных причин некорректной работы используемого плагина. |
+|2018-02-08 |2018-02-11 |3 |Устранение выявленных причин некорректной работы плагина struct. |
+<pagemod add_plans output_before>|@@Дата с@@ |@@Дата по@@ |@@План@@ |@@Описание@@ |
+</pagemod>
+
+
+<form>
+action pagemod _self add_plans
+date "Дата с"
+date "Дата по"
+number "План"
+textbox "Описание"
+submit "Добавить плановые показатели"
+</form>
+
+====== Выполнение ======
+
+<WRAP center round info 60%>
+**[[.003:doc|Документация по задаче 003]]**
+
+**[[.003:dev|Разработка по задаче 003]]**
+
+</WRAP>
+
+====== Трудозатраты по задаче ======
+
+---- struct table ----
+schema: pmd00work
+cols: %pageid%, исполнит, видработ, начдата, окондата, час, описработ, %lastupdate%, %lasteditor% 
+head: код, исполнитель, вид работы, начало дата, окончание дата, час, описание работ,  изменение, автор
+filterand:  %pageid% *~ 003-
+sort: начдата
+dynfilters: 1
+summarize: 1
+----
+
+<form>
+Action template .:003:worktemplate ..:work:"003-@@код операции@@"
+hiddenautoinc "код операции" 0000
+struct_field "pmd00work.исполнит"
+struct_field "pmd00work.видработ"
+struct_field "pmd00work.начдата"
+struct_field "pmd00work.окондата"
+struct_field "pmd00work.час"
+struct_field "pmd00work.описработ"
+submit "Записать"
+
+</form>
+
+[[.:003:worktemplate|Шаблон описания работ 003]]
+

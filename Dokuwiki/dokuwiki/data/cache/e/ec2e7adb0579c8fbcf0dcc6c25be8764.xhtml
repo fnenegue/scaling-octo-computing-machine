@@ -1,0 +1,32 @@
+<div class="structaggregation"><div class="table"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th  ><a href="/doku.php?id=testfilter&amp;srt=%25pageid%25" class="" title="Sort by this column">код</a></th><th  ><a href="/doku.php?id=testfilter&amp;srt=%25lastupdate%25" class="" title="Sort by this column">датавремя</a></th><th  data-field="%lasteditor%"><a href="/doku.php?id=testfilter&amp;srt=%25lasteditor%25" class="" title="Sort by this column">изменение</a></th>
+	</tr>
+<tr class="dataflt"><th><form method="get" action="/doku.php?id=testfilter" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="id" value="testfilter" /><label><span></span> <input type="text" name="flt[%pageid%*~]" /></label>
+</div></form>
+</th><th><form method="get" action="/doku.php?id=testfilter" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="id" value="testfilter" /><label><span></span> <input type="text" name="flt[%lastupdate%*~]" /></label>
+</div></form>
+</th><th><form method="get" action="/doku.php?id=testfilter" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="id" value="testfilter" /><label><span></span> <input type="text" name="flt[%lasteditor%*~]" /></label>
+</div></form>
+</th></tr>	</thead>
+	<tbody>
+	<tr class="row1" data-pid="test:0000"><td class="col0"><a href="/doku.php?id=test:0000" class="wikilink1" title="test:0000">0000</a></td><td class="col1">2018/02/02 17:29</td><td class="col2">root</td>
+	</tr>
+	<tr class="row2" data-pid="test:0001"><td class="col0"><a href="/doku.php?id=test:0001" class="wikilink1" title="test:0001">0001</a></td><td class="col1">2018/02/02 17:28</td><td class="col2">root</td>
+	</tr>
+	<tr class="row3" data-pid="test:0002"><td class="col0"><a href="/doku.php?id=test:0002" class="wikilink1" title="test:0002">0002</a></td><td class="col1">2018/02/02 17:30</td><td class="col2">root</td>
+	</tr>
+	<tr class="row4" data-pid="test:0003"><td class="col0"><a href="/doku.php?id=test:0003" class="wikilink1" title="test:0003">0003</a></td><td class="col1">2018/02/02 17:30</td><td class="col2">root</td>
+	</tr>
+	</tbody>
+	<tfoot>
+	</tfoot>
+</table></div>
+<a href="/doku.php?do=export_struct_csv&amp;id=testfilter&amp;hash=777930fab2cc127b97417fa7470ca4fe" class="export mediafile mf_csv">CSV Export</a></div>
+<p>
+SELECT date(col5), * from data_test where date(col5)&gt;=&#039;2018-02-01&#039;
+</p>

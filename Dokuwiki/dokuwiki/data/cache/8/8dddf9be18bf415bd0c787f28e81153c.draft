@@ -1,0 +1,94 @@
+a:6:{s:2:"id";s:13:"pmd00:job:001";s:6:"prefix";s:0:"";s:4:"text";s:4156:"====== Автозаполнение поля user текущим пользователем, авторасчет длительности работ ======
+
+====== Цели ======
+
+  - ([[pmd00:job:001#выполнение|выполнено]]) Расширение функционала поля user. Добавление возможности автозаполнения текущим пользователем dokuwiki.
+  - Расширение функционала поля struct_field для полей БД с типом user. Добавление возможности автозаполнения текущим пользователем dokuwiki.
+
+  - Ознакомление с функционалом pmd и механизмами bueroucracy (плагин для отображения форм)
+
+Критерии приемки:
+
+  * Сохранение текущего функционала поля (редактирование, автоподбор по первым символам)
+  * Возможность опционально указать, что поле автозаполняется текущим пользователем
+  * Сохранение доработки после обновления dokuwiki и Bureaucracy Plugin
+====== Планирование ======
+
+^ Дата с      ^ Дата по  ^ План  ^ Описание                                                          ^
+| 2017-11-27  |          | 2     | Ознакомление с механизмами dokuwiki и плагина для отрисовки форм  |
+|2018-02-18 |2018-02-21 |6 |Анализ бизнес логики функционала usermanager |
+<pagemod add_plans output_before>|@@Дата с@@ |@@Дата по@@ |@@План@@ |@@Описание@@ |
+</pagemod>
+
+
+<form>
+action pagemod _self add_plans
+date "Дата с"
+date "Дата по"
+number "План"
+textbox "Описание"
+submit "Добавить плановые показатели"
+</form>
+
+====== Выполнение ======
+
+Для поля user 
+
+   user "текущий пользователь"  "=@USER@"
+
+<WRAP center round info 60%>
+**[[.001:doc|Документация по задаче 001]]**
+
+**[[.001:dev|Разработка по задаче 001]]**
+
+</WRAP>
+
+====== Трудозатраты по задаче ======
+
+---- struct table ----
+schema: pmd00work
+cols: %pageid%, исполнит, видработ, начдата, окондата, час, описработ, %lastupdate%, %lasteditor% 
+head: код, исполнитель, вид работы, начало дата, окончание дата, час, описание работ,  изменение, автор
+filterand:  %pageid% *~ 001-
+sort: начдата
+dynfilters: 1
+summarize: 1
+----
+
+<form>
+Action template .:001:worktemplate ..:work:"001-@@код операции@@"
+hiddenautoinc "код операции" 0000
+struct_field "pmd00work.исполнит"
+struct_field "pmd00work.видработ"
+struct_field "pmd00work.начдата"
+struct_field "pmd00work.окондата"
+struct_field "pmd00work.описработ"
+struct_field "pmd00work.час" 
+submit "Записать"
+</form>
+<PHP>
+$datestart = '2018-01-01 02:24:50';
+$datefinish = '2018-01-01 17:00:00';
+$datetime1 = new DateTime($datestart);
+$datetime2 = new DateTime($datefinish);
+$interval = $datetime1->diff($datetime2);
+$elapsed = $interval->format('%h,%i');
+echo 'Количество часов:';
+echo $elapsed."\n";
+</PHP>
+<PHP>
+$file_db = new PDO('sqlite:'.$conf['metadir'].'/'.'struct.sqlite3');
+$file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sql = "SELECT name,sql FROM sqlite_master WHERE type='table' ORDER BY name";
+$result = $file_db->query($sql);
+if (!$result) echo "empty";
+foreach($result as $row) {
+      echo "name: " . $row['name'] . "<br>\n";
+      echo "sql : " . $row['sql'] . "<br>\n";
+      echo "<br>\n";
+    }
+echo "Обнови страницу!";
+</PHP>
+[[.:001:worktemplate|Шаблон описания работ 001]]
+
+";s:6:"suffix";s:0:"";s:4:"date";i:1530380758;s:6:"client";s:4:"root";}

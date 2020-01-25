@@ -1,0 +1,23 @@
+====== Протокол совещания @@дата совещания ГГ-ММ-ДД@@ ======
+
+|Место и время:| |
+|Цель совещания:| |
+
+**Участники: 	**
+
+===== Все задачи =====
+
+~~TODOLIST showdate:yes completed:no checkbox:no ns:pmd00:protocol:~~
+
+~~TODOLIST short:yes showdate:yes completed:no checkbox:no ns:pmd00:protocol:~~
+
+
+==== Повестка совещания: ====
+
+<todo #chuprina_iv:2017-11-16>Вопрос номер один</todo>
+
+<todo #>Вопрос номер два</todo>
+====Стенограмма совещания:====
+
+====Принятые решения====
+
